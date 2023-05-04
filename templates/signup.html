@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url('https://www.shutterstock.com/image-illustration/internet-security-closed-pad-lock-260nw-515395867.jpg');
+            background-size: cover;
+        }
+        b{
+            color:white;
+        }
+        label {
+            color: white;
+        }
+        .btnstyle {
+            background-color:greenyellow;
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b></b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST">
+        <center><h1 style="color:white">Sign Up</h1></center>
+        <div style="margin-left:42%;; margin-top:5%">
+        <label>Name:</label>
+        <p><input placeholder="Enter  Name" type="text" name="name" required/></p>
+        <label>Mobile:</label>
+        <p><input placeholder="Enter mobile number" type="number" name="mobile" required/></p>
+        <label> Password</label>
+        <p><input placeholder="Enter your password"  type="text" name="password" required/></p>
+        <label>Email:</label>
+        <p><input placeholder="Enter your mail" type="email" name="email" required/></p>
+        <label>Gender:</label>
+        <p><input placeholder="Enter gender" type="text" name="gender" required/></p>
+        <label>Address:</label>
+        <p><input placeholder="Enter address" type="text" name="address" required/></p>
+        <a href="{{url_for('signup')}}" target="_blank"></a>
+        <button class="btnstyle">submit</button>
+    </form>
+</div>
+
+</body>
+</html>

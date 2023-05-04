@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iemspage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+{% with messages =get_flashed_messages() %}
+{% if messages %}
+        {% for message in messages %}
+        <center ><b>{{message}}</b></center>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<div class="bgcolor3 pt-4 pb-4">
+    <div class="container">
+        <div class="row">
+            {% for i in items %}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="explorecards shadow p-3 mb-3">
+                    <img src="{{url_for('static',filename=i[0]+'.jpg')}}" class="exploreimage"/>
+                    <label>Name :{{i[1]}}</label><br>
+                    <label>qty :{{i[3]}}</label><br>
+                    <label>Price :{{i[4]}}</label><br>
+                    <label>Category :{{i[5]}}</label><br>
+                    <a class="btn btn-info ml-auto add-button" href="{{url_for('cart',itemid=i[0],name=i[1],price=i[2])}}">Add to Cart</a>
+                    <button class="btn btn-danger">Buy Now</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<body>
+    
+</body>
+</html>

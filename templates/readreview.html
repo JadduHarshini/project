@@ -1,0 +1,22 @@
+{% block element %}
+<div class="readreview pt-5 pt-6">
+    <div class="container mt-5 ">
+        <div class="row">
+            {% block content %}
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="read shadow p-3 ">
+                    <div>
+                        {% for i in reviews %}
+                                    <label>cus name:{{i[0]}}</label>
+                                    <label> Name:{{i[2]}}</label><br>
+                                    <label>Discription:{{i[3]}}</label><br>          
+                                    <label > Rate:{{i[4]}}</label><br>
+                        {% endfor %}   
+                    </div>  
+                </div>
+            </div>        
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

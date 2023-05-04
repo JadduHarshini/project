@@ -1,0 +1,26 @@
+    {% extends 'homepage.html' %}
+      {% block element %}      
+    <div class="bgcolor3 pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                {% for i in items %}
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="explorecards shadow p-3 mb-3">
+                        <a href="{{url_for('itemdetails',itemid=i[0])}}"><img src="{{url_for('static',filename=i[0]+'.jpg')}}" class="exploreimage" height="500" width="500"/></a>
+                        <label>Name :{{i[1]}}</label><br>
+                        <label>qty :{{i[3]}}</label><br>
+                        <label>Price :{{i[4]}}</label><br>
+                        <label>category:{{i[5]}}</label>
+                        
+                        <a class="btn btn-info ml-auto add-button" href="{{url_for('cart',itemid=i[0],name=i[1],price=i[4],description=i[2],category=i[5])}}">Add to Cart</a>
+                        <button class="btn btn-danger mt-2">Buy Now</button> 
+                    </div>
+                </div>
+            </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+ 

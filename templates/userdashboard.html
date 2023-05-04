@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard</title>
+    <style>
+        * {
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-image:url('data:image/jpeg;base64,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');
+            background-size: cover;
+
+        }
+        .btnstyle {
+            background-color:goldenrod;
+            color:black;
+            padding:20px;
+            border-radius: 8px;
+            border:none;
+            font-size: 25px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .student {
+            margin-top:23%; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="student">
+    </div>
+    <center><h1>User Dashboard</h1></center>
+    <div style="text-align:center;">
+    <a href="{{url_for('category')}}"><button class="btnstyle">Category</button></a>
+    <a href="{{url_for('cart')}}"><button class="btnstyle">Cart</button></a>
+    </div>
+</body>
+</html>
